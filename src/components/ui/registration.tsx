@@ -12,7 +12,7 @@ import * as SelectPrimitive from "@radix-ui/react-select";
 import { CheckIcon, ChevronDownIcon } from "lucide-react";
 import { JSX, SVGProps } from "react";
 import { useRouter } from "next/navigation";
-
+import Image from "next/image";
 function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
@@ -178,11 +178,14 @@ export default function SignupForm() {
     }
 
     try {
-      const res = await fetch("https://registration-backend-z2fj.onrender.com/api/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+      const res = await fetch(
+        "https://registration-backend-z2fj.onrender.com/api/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        }
+      );
 
       if (res.status === 409) {
         setErrors({ ...errors, submit: "Email is already in use." });
@@ -259,19 +262,33 @@ export default function SignupForm() {
               <Label htmlFor="student mb-2">
                 Use these accounts to proceed with your payment.
               </Label>
-              <ul className="text-sm">
-                <li><b>Easypaisa : 03303849279</b> </li>
-                <li><b>Jazzcash : </b></li>
-                <li>
-                  <b>Bank Accounts:</b>
-                  <br />
-                  Account name : Manahil
-                  <br />
-                  Account number : 01890112463719
-                  <br />
-                  Bank name : Meezan bank
-                </li>
-              </ul>
+              <div className="flex items-center gap-5 mt-3">
+                <div className="flex items-center gap-2">
+                  <Image
+                    src="/easypaisa.jpg"
+                    alt="img"
+                    width="20"
+                    height="20"
+                  />
+                  <h1 className="text-xs">03303849279</h1>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Image src="/jazzcash.png" alt="img" width="30" height="30" />
+                  <h1 className="text-xs">03303849279</h1>
+                </div>
+               
+
+              </div>
+               <div className="flex items-start  gap-2">
+                  <Image src="/bank.png" alt="img" width="20" height="20" />
+                  <h1 className="text-xs">
+                    Bank Name: HBL
+                    <br />
+                    Account Title: TAHIRA JAMIL
+                    <br />
+                    Account Number: 16427901750899
+                  </h1>
+                </div>
             </div>
             <div className="space-y-4">
               <Label htmlFor="phonenumber">Phone Number*</Label>

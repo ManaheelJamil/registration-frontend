@@ -15,7 +15,7 @@ import Link from "next/link";
 function AlertDialog4() {
   return (
     <AlertDialog>
-      <div className="w-[360px] mx-auto h-screen flex items-center justify-center  ">
+      <div className="w-[360px] lg:mx-auto mx-5 h-screen flex items-center justify-center  ">
         <div className="h-[250px] space-y-5 bg-gray-200 py-5 px-5 rounded-xl">
           <AlertDialogHeader>
             <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-green-50">

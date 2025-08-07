@@ -165,7 +165,7 @@ export default function SignupForm() {
             <div className="space-y-0.5 flex flex-col items-center">
               <h2 className="text-2xl font-semibold text-foreground">Registered Form</h2>
               <p className="text-muted-foreground mt-4 text-center">
-                Welcome! Enroll Yourself in Website Development BootCamp 0.1
+                Welcome! Enroll Yourself in ClickToCode BootCamp
               </p>
             </div>
           </CardHeader>
